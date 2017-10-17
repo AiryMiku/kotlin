@@ -2,7 +2,7 @@
 apply { plugin("kotlin") }
 
 dependencies {
-    testCompile(project(":compiler:tests-common"))
+    testCompile(projectTests(":compiler:tests-common"))
     testCompileOnly(project(":compiler:frontend"))
     testCompileOnly(project(":compiler:cli"))
     testCompileOnly(project(":compiler:util"))
@@ -10,7 +10,7 @@ dependencies {
     testCompile(project(":js:js.serializer"))
     testCompile(project(":js:js.dce"))
     testCompile(ideaSdkDeps("openapi", "idea"))
-    testRuntime(commonDep("junit:junit"))
+    testCompile(commonDep("junit:junit"))
     testRuntime(projectDist(":kotlin-stdlib"))
     testRuntime(projectDist(":kotlin-stdlib-js"))
     testRuntime(projectDist(":kotlin-test:kotlin-test-js")) // to be sure that kotlin-test-js built before tests runned
